@@ -7,7 +7,7 @@ class login extends module {
 	var $core;
 	var $erreurlogin;
 
-	function login(&$refmm,&$refcore)
+	function __construct(&$refmm,&$refcore)
 	{
 		$this->modulemanager=&$refmm;
 		$this->core=&$refcore;
@@ -16,7 +16,7 @@ class login extends module {
 	function corps()
 	{
 			echo $this->core->erreurlogin;
-			echo "\t\t\t\t<a href=\"?module=oubli\">Mot de passe oublié</a>\n";
+			echo "\t\t\t\t<a href=\"?module=oubli\">Mot de passe oubliï¿½</a>\n";
 			if (isset($_POST['login'])) $login=$_POST['login'];
 			else $login='';
 ?>			

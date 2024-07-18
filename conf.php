@@ -1,6 +1,6 @@
 <?php
 $host='localhost';
 $user='yechteam';
-$pwd='bohsohzi';
+$pwd='maethcey';
 $database='yechteam';
 ?>

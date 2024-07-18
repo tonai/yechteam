@@ -38,7 +38,7 @@ class jeux extends module {
 			if(!empty($record['id_user']) && $jeu['concours']==1) 
 			{
 				$recordman=$this->core->db->selection('utilisateurs','id',$record['id_user'],'',0);
-				$phrase="<p>Record : ".$record['score']." détenu par ".$recordman['login']."</p>";
+				$phrase="<p>Record : ".$record['score']." dï¿½tenu par ".$recordman['login']."</p>";
 			}
 			elseif($jeu['concours']==1) $phrase="<p>Il n'y a pas encore de record pour ce jeu, tentes ta chance !</p>"; 
 			else $phrase="<p>Ce jeu ne fait pas partie du concours, inutile d'enregistrer ton score !</p>"; 
@@ -73,11 +73,11 @@ class jeux extends module {
 					echo "\n<td><strong>Pseudo</strong></td>";
 					echo "\n<td><strong>Score</strong></td></tr>";
 					$query="SELECT * FROM score join utilisateurs where jeu=".$buff['id']." AND score.id_user=utilisateurs.id ORDER by score DESC";//utilisateurs.id=reservation.id_user and id_team=".$buff['id']."";
-					$res=mysql_query($query);
+					$res=mysqli_query($query);
 					$i=1;
 					$rang=0;
-					$nombre=mysql_affected_rows();
-					while($resultat=mysql_fetch_array($res))
+					$nombre=mysqli_affected_rows();
+					while($resultat=mysqli_fetch_array($res))
 					{
 						if($i<=10)
 						{
@@ -87,7 +87,7 @@ class jeux extends module {
 						$i++;
 					}
 					if($rang != 0) $classement=$rang."/".$nombre;
-					else $classement="Non classé";
+					else $classement="Non classï¿½";
 					echo "<tr><td colspan=\"3\">Rang : $classement</td></tr>";
 					echo "<tr><td colspan=\"3\"><a href=\"?menu=bonus&module=jeux&id=".$buff['id']."\">Jouer !</a></td></tr>";
 					echo "\n</table>";
@@ -122,9 +122,9 @@ class jeux extends module {
 		}
 		else
 		{
-			echo "\n<p>Si tu as un peu de temps à tuer ou si le yetisport n'a plus de secret pour toi tu tombes à pic ! 
-					Entraînes toi dans la section <a href=\"?menu=bonus&module=jeux&action=fun\">Just for fun</a> et quand 
-					tu seras prêt(e) viens défier les meilleur(e)s dans notre
+			echo "\n<p>Si tu as un peu de temps ï¿½ tuer ou si le yetisport n'a plus de secret pour toi tu tombes ï¿½ pic ! 
+					Entraï¿½nes toi dans la section <a href=\"?menu=bonus&module=jeux&action=fun\">Just for fun</a> et quand 
+					tu seras prï¿½t(e) viens dï¿½fier les meilleur(e)s dans notre
 					<a href=\"?menu=bonus&module=jeux&action=concours\">concours !</a></p>";
 			echo "<p>(seuls les jeux de la section concours enregistreront ton score.)</p>";
 		}

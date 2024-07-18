@@ -18,7 +18,7 @@ class noyau
 	var $menu;
 	var $module;
 	
-	function Noyau() 
+	function __construct() 
 	{	
 		$this->style="icelsius";
 		$this->formulaire= new formulaire($this);
@@ -29,24 +29,27 @@ class noyau
 		$this->erreurlogin='';
 		
 		/* 
-			Redirige vers le menu accueil si la variable GET ne correspond pas à un menu existant
+			Redirige vers le menu accueil si la variable GET ne correspond pas ï¿½ un menu existant
 		*/
 		if(isset($_GET['menu']))
 		{
-			$buff=$this->db->selection('menu','nom',$_GET['menu'],'',0);	
+			// $buff=$this->db->selection('menu','nom',$_GET['menu'],'',0);	
+      $buff = [];
 			if(isset($buff)) $this->menu=$_GET['menu'];
 			else $this->menu="accueil";
 		}
 		else $this->menu="accueil";
 		
 		/* 	
-			Charge le premier module par défaut 
-			Sinon redirige vers le menu accueil si la variable GET ne correspond pas à un module existant pour le menu choisi
+			Charge le premier module par dï¿½faut 
+			Sinon redirige vers le menu accueil si la variable GET ne correspond pas ï¿½ un module existant pour le menu choisi
 		*/
 		if(isset($_GET['module'])) 
 		{		
-				$buff=$this->db->selection('menu','nom',$this->menu,'',0);
-				$buff2=$this->db->selection('sous_menu',array('id_menu','module'),array($buff['id'],$_GET['module']),'',0);
+				// $buff=$this->db->selection('menu','nom',$this->menu,'',0);
+        $buff = [];
+				// $buff2=$this->db->selection('sous_menu',array('id_menu','module'),array($buff['id'],$_GET['module']),'',0);
+        $buff2 = [];
 				if(isset($buff2) || $_GET['module']=="inscription") $this->module=$_GET['module'];
 				else 
 				{
@@ -56,8 +59,10 @@ class noyau
 		}
 		else 
 		{
-			$buff=$this->db->selection('menu','nom',$this->menu,'',0);
-			$buff2=$this->db->selection('sous_menu','id_menu',$buff['id'],'ordre',0);
+			// $buff=$this->db->selection('menu','nom',$this->menu,'',0);
+      $buff = [];
+			// $buff2=$this->db->selection('sous_menu','id_menu',$buff['id'],'ordre',0);
+      $buff2 = [];
 			if(isset($buff2['module'])) $this->module=$buff2['module'];
 			else 
 			{
@@ -137,7 +142,7 @@ class noyau
 	}
 	
 	/** 
-	 *	Charge les préférences d'un utilisateur depuis la base de données dans les variables de session
+	 *	Charge les prï¿½fï¿½rences d'un utilisateur depuis la base de donnï¿½es dans les variables de session
 	 *
 	 *	@author		Pierre Claudon <claudon.pierre@gmail.com>
 	 */
@@ -163,7 +168,7 @@ class noyau
 					<strong>Salut <?php echo $_SESSION['identifiant']; ?> !</strong>
 				</li>
 				<li>
-					<strong><a href="?deconnect=1">Se déconnecter</a></strong>
+					<strong><a href="?deconnect=1">Se dï¿½connecter</a></strong>
 				</li>
 			</ul>
 <?php	
@@ -275,7 +280,7 @@ echo "<img src=\"images/yeti_logo.png\"/ id=\"logo\" />";
 		echo "\n\t\t<div id=\"corps\">";
 		
 		if(!$this->module_manager->module->identification  || $this->module_manager->module->identification && $this->admin->estidentifie()) $this->module_manager->module->corps();
-		else echo "Pour accéder à cette section tu dois d'abord t'inscrire !";
+		else echo "Pour accï¿½der ï¿½ cette section tu dois d'abord t'inscrire !";
 	echo "<div id=\"lecteur\">";	
 ?>		<!--
    <object type="application/x-shockwave-flash" width="400" height="220" data="flvplayer.swf">
@@ -294,7 +299,7 @@ echo "<img src=\"images/yeti_logo.png\"/ id=\"logo\" />";
 	function pied() 
 	{
 		$this->module_manager->module->pied();
-		mysql_close();
+		mysqli_close($this->db->ressource);
 		echo "<hr />";
 		echo "</div>";
 		echo "\n</body>";

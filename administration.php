@@ -5,7 +5,7 @@ class administration
 	var $core;
 	var $utilisateur;
 	
-	function administration(&$refcore)
+	function __construct(&$refcore)
 	{
 		$this->core=&$refcore;
 		$this->utilisateur=array();

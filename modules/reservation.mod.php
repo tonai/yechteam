@@ -27,13 +27,13 @@ class reservation extends module {
 	function estcomplete($equipe)
 	{
 		$query="SELECT * FROM lasergame_team where id=".$equipe."";
-		$res=mysql_query($query);
-		while($resultat=mysql_fetch_array($res))
+		$res=mysqli_query($query);
+		while($resultat=mysqli_fetch_array($res))
 		{	
 			$i=0;
 			$query="SELECT * FROM reservation WHERE id_team=".$resultat['id']."";
-			$res=mysql_query($query);
-			while($resultat2=mysql_fetch_array($res))
+			$res=mysqli_query($query);
+			while($resultat2=mysqli_fetch_array($res))
 			{
 				$i++;
 			}
@@ -51,13 +51,13 @@ class reservation extends module {
 				if(isset($_POST['submit']) && $_POST['submit']=="annuler") $this->core->utile->redirection('?menu=evenements&module=calendrier');
 				elseif(!empty($_POST['chambre']))
 				{
-					if(!preg_match('#^[a-f A-F]{1}[0-9]{1,3}[a-b]?$#',$_POST['chambre'])) $this->message="Le numéro de chambre n'est pas valide !";		
+					if(!preg_match('#^[a-f A-F]{1}[0-9]{1,3}[a-b]?$#',$_POST['chambre'])) $this->message="Le numï¿½ro de chambre n'est pas valide !";		
 					else 
 					{
 						if (!isset($_POST['service'])) $_POST['service']=$_POST['service_heure']." h ".$_POST['service_min'];
 						if(!isset($_POST['boisson'])) $_POST['boisson']="";
 						$this->core->db->ajout('reservation',array('id_user','date','chambre','boisson','service'),array($_SESSION['id'],$_POST['date_ev'],$_POST['chambre'],$_POST['boisson'],$_POST['service']));
-						$this->message="L'enregistrement s'est bien effectué !";
+						$this->message="L'enregistrement s'est bien effectuï¿½ !";
 						$this->core->utile->redirection('?menu=evenements&module=reservation');
 					}
 				}
@@ -66,12 +66,12 @@ class reservation extends module {
 					if($_POST['team']==4 || $_POST['team']==1 || $_POST['team']==2 || $_POST['team']==3) $_POST['service']='13 h 30';
 					else $_POST['service']='16 h 00';
 					$this->core->db->ajout('reservation',array('id_user','date','service','id_team'),array($_SESSION['id'],$_POST['date_ev'],$_POST['service'],$_POST['team']));	
-					$this->message="L'enregistrement s'est bien effectué !";
+					$this->message="L'enregistrement s'est bien effectuï¿½ !";
 					$this->core->utile->redirection('?menu=evenements&module=reservation');
 				}
 				else 
 				{
-					$this->message="Le numéro de chambre est manquant !";
+					$this->message="Le numï¿½ro de chambre est manquant !";
 				}
 			}
 			elseif($_GET['action']=="supprimer")
@@ -100,7 +100,7 @@ class reservation extends module {
 			$buff=$this->core->db->selection('evenements','date',$date_ev,'',0);
 			if (isset($buff))
 			{
-				echo "\n<p>Tu as choisi de t'inscrire à l'évènement&nbsp;&nbsp;&nbsp;<em>".$buff['nom']."</em></p>";
+				echo "\n<p>Tu as choisi de t'inscrire ï¿½ l'ï¿½vï¿½nement&nbsp;&nbsp;&nbsp;<em>".$buff['nom']."</em></p>";
 				echo "\n<br /><br />";
 				echo $buff['description'];
 				echo "\n<br /><br />";
@@ -114,7 +114,7 @@ class reservation extends module {
 			?>
 		
 				<form method="POST" action="?menu=evenements&module=reservation&action=inscription">
-					<label for="prenom">Prénom : </label><?php echo $_SESSION['prenom'];  ?><br /><br />	
+					<label for="prenom">Prï¿½nom : </label><?php echo $_SESSION['prenom'];  ?><br /><br />	
 					<label for="nom">Nom : </label><?php echo $_SESSION['nom'];  ?><br /><br />	
 
 <?php	
@@ -169,19 +169,19 @@ class reservation extends module {
 							echo "</select>";
 							echo "<br />";
 							echo "<br />";
-							echo "<p class=\"left\">Liste des équipes&nbsp;&nbsp;&nbsp;</p>";
+							echo "<p class=\"left\">Liste des ï¿½quipes&nbsp;&nbsp;&nbsp;</p>";
 							echo "<div class=\"left\">";
-							echo "\n<p>Première session (13 h 30 au lasergame)</p>";
+							echo "\n<p>Premiï¿½re session (13 h 30 au lasergame)</p>";
 							$i=0;
 							while($buff=$this->core->db->selection('lasergame_team'))
 							{
-								if ($i==4) echo "\n<br /><p>Deuxième session (16 h 00 au lasergame)</p>";
+								if ($i==4) echo "\n<br /><p>Deuxiï¿½me session (16 h 00 au lasergame)</p>";
 								echo "<select>";
 								echo "<option selected=\"selected\">".$buff['nom']."</option>";
 								echo "<optgroup label=\"Participants\">";
 								$query="SELECT * FROM utilisateurs join reservation where utilisateurs.id=reservation.id_user and id_team=".$buff['id']."";
-								$res=mysql_query($query);
-								while($resultat=mysql_fetch_array($res))
+								$res=mysqli_query($query);
+								while($resultat=mysqli_fetch_array($res))
 								{
 									echo "<option>".$resultat['prenom']." ".$resultat['nom']."</option>";
 								}		
@@ -199,7 +199,7 @@ class reservation extends module {
 						case '0324':
 						break;
 						default:
-						echo "Désolé, les inscriptions sont terminées";
+						echo "Dï¿½solï¿½, les inscriptions sont terminï¿½es";
 						break;
 					}
 					if ($this->limite==0 && $date_ev!='0324') 
@@ -214,17 +214,17 @@ class reservation extends module {
 
 <?php		
 					}
-					elseif($date_ev!='0324') echo "Les inscriptions sont limitées à une place par personne inscrite sur le site. Pour changer d'équipe tu dois quitter celle dans laquelle tu es actuellement et en choisir une autre (dans la limite des places disponibles).";
+					elseif($date_ev!='0324') echo "Les inscriptions sont limitï¿½es ï¿½ une place par personne inscrite sur le site. Pour changer d'ï¿½quipe tu dois quitter celle dans laquelle tu es actuellement et en choisir une autre (dans la limite des places disponibles).";
 					
 				}
 				else 
 				{
-					echo "Cet évènement est déja passé !";
+					echo "Cet ï¿½vï¿½nement est dï¿½ja passï¿½ !";
 				}
 			}
 			else
 			{
-				echo "Cet évènement n'existe pas !";
+				echo "Cet ï¿½vï¿½nement n'existe pas !";
 			}
 		}
 		elseif(isset($_GET['action']) && $_GET['action']=='team') 
@@ -234,19 +234,19 @@ class reservation extends module {
 		
 		
 		echo "<form>";
-							echo "<p class=\"left\">Liste des équipes&nbsp;&nbsp;&nbsp;</p>";
+							echo "<p class=\"left\">Liste des ï¿½quipes&nbsp;&nbsp;&nbsp;</p>";
 							echo "<div class=\"left\">";
-							echo "\n<p>Première session (13 h 30 au lasergame)</p>";
+							echo "\n<p>Premiï¿½re session (13 h 30 au lasergame)</p>";
 							$i=0;
 							while($buff=$this->core->db->selection('lasergame_team'))
 							{
-								if ($i==4) echo "\n<br /><p>Deuxième session (16 h 00 au lasergame)</p>";
+								if ($i==4) echo "\n<br /><p>Deuxiï¿½me session (16 h 00 au lasergame)</p>";
 								echo "<select>";
 								echo "<option selected=\"selected\">".$buff['nom']."</option>";
 								echo "<optgroup label=\"Participants\">";
 								$query="SELECT * FROM utilisateurs join reservation where utilisateurs.id=reservation.id_user and id_team=".$buff['id']."";
-								$res=mysql_query($query);
-								while($resultat=mysql_fetch_array($res))
+								$res=mysqli_query($query);
+								while($resultat=mysqli_fetch_array($res))
 								{
 									echo "<option>".$resultat['prenom']." ".$resultat['nom']."</option>";
 								}		
@@ -271,33 +271,33 @@ class reservation extends module {
 		}
 		else
 		{
-			echo "\n<p>Voici les liste des activités auxquelles tu souhaites participer ! </p>";
+			echo "\n<p>Voici les liste des activitï¿½s auxquelles tu souhaites participer ! </p>";
 			echo "\n<table>";
-			echo "\n<tr><th>Date</th><th>Evènement</th></tr>";
+			echo "\n<tr><th>Date</th><th>Evï¿½nement</th></tr>";
 			$buff=$this->core->db->selection('reservation','id_user',$_SESSION['id'],'date',0);
-			if(empty($buff['date'])) echo "<tr><tr /><tr><td colspan=\"3\">Tu n'es inscrit(e) à aucune activité pour le moment.</td></tr>";
+			if(empty($buff['date'])) echo "<tr><tr /><tr><td colspan=\"3\">Tu n'es inscrit(e) ï¿½ aucune activitï¿½ pour le moment.</td></tr>";
 			while($buff=$this->core->db->selection('reservation','id_user',$_SESSION['id'],'date'))
 			{	
 				$query="SELECT * FROM evenements WHERE date=".$buff['date']."";
-				$res=mysql_query($query);
-				while($resultat=mysql_fetch_array($res))
+				$res=mysqli_query($query);
+				while($resultat=mysqli_fetch_array($res))
 				{
 					$date=$buff['date'][2].$buff['date'][3]."/".$buff['date'][0].$buff['date'][1]."/07";
 					echo "\n<tr>";
 					echo "\n<td>".$date."</td>";
-					echo "\n<td>".$resultat['nom']." à ".$buff['service'];
+					echo "\n<td>".$resultat['nom']." ï¿½ ".$buff['service'];
 					if(isset($buff['id_team']) && !empty($buff['id_team'])) 
 					{
 						$query="SELECT * FROM lasergame_team WHERE id=".$buff['id_team']."";
-						$res=mysql_query($query);
-						$resultat2=mysql_fetch_array($res);
-						echo " dans l'équipe ";
+						$res=mysqli_query($query);
+						$resultat2=mysqli_fetch_array($res);
+						echo " dans l'ï¿½quipe ";
 						echo "<select>";
 						echo "<option selected=\"selected\">".$resultat2['nom']."</option>";
 						echo "<optgroup label=\"Equipiers\">";
 						$query="SELECT * FROM utilisateurs join reservation where utilisateurs.id=reservation.id_user and id_team=".$buff['id_team']."";
-						$res=mysql_query($query);
-						while($resultat3=mysql_fetch_array($res))
+						$res=mysqli_query($query);
+						while($resultat3=mysqli_fetch_array($res))
 						{
 							if ($resultat3['id_user']!=$_SESSION['id']) echo "<option>".$resultat3['prenom']." ".$resultat3['nom']."</option>";
 						}
@@ -308,7 +308,7 @@ class reservation extends module {
 					echo "</td>";
 					echo "\n<td><a href=\"?menu=evenements&module=reservation&action=supprimer&idreserv=".$buff['id']."\">Annuler</a>";
 					echo "<br />";
-					echo "\n<a href=\"?menu=evenements&module=reservation&action=team\">Voir les équipes</a></td>";
+					echo "\n<a href=\"?menu=evenements&module=reservation&action=team\">Voir les ï¿½quipes</a></td>";
 					echo "\n</tr>";
 				}
 			}

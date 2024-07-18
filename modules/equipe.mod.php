@@ -7,11 +7,11 @@ class equipe extends module {
 	var $modulemanager;
 	var $core;
 	var $message;
-	var $actions_module = array(	"L'équipe"=>"presentation",
+	var $actions_module = array(	"L'ï¿½quipe"=>"presentation",
 									"Le programme"=>"programme",
 									"Le film de campagne"=>"film",
 									);
-	function equipe(&$refmm,&$refcore)
+	function __construct(&$refmm,&$refcore)
 	{
 		$this->modulemanager=&$refmm;
 		$this->core=&$refcore;
@@ -90,16 +90,16 @@ class equipe extends module {
 
 	<ul class="left" id="sommaire">
 		<li><a href="?menu=equipe&module=equipe&action=programme&par=etudes">Etudes</a></li>
-		<li><a href="?menu=equipe&module=equipe&action=programme&par=integration">Intégration</a></li>
-		<li><a href="?menu=equipe&module=equipe&action=programme&par=evenements">Evènements et soirées</a></li>
-		<li><a href="?menu=equipe&module=equipe&action=programme&par=rez">Vie à la rez</a></li>
+		<li><a href="?menu=equipe&module=equipe&action=programme&par=integration">Intï¿½gration</a></li>
+		<li><a href="?menu=equipe&module=equipe&action=programme&par=evenements">Evï¿½nements et soirï¿½es</a></li>
+		<li><a href="?menu=equipe&module=equipe&action=programme&par=rez">Vie ï¿½ la rez</a></li>
 		<li><a href="?menu=equipe&module=equipe&action=programme&par=communication">Communication</a></li>
-		<li><a href="?menu=equipe&module=equipe&action=programme&par=solidarite">Solidarité</a></li>
-		<li><a href="?menu=equipe&module=equipe&action=programme&par=autres">Autres écoles</a></li>
-		<li><a href="?menu=equipe&module=equipe&action=programme&par=ecole">Vie à l'école</a></li>
+		<li><a href="?menu=equipe&module=equipe&action=programme&par=solidarite">Solidaritï¿½</a></li>
+		<li><a href="?menu=equipe&module=equipe&action=programme&par=autres">Autres ï¿½coles</a></li>
+		<li><a href="?menu=equipe&module=equipe&action=programme&par=ecole">Vie ï¿½ l'ï¿½cole</a></li>
 	</ul>
 <br />
-<div id="intro" class="lseft">La Yech'team soumet ses idées pour améliorer la vie du centralien. Toutes ces idées ne sont que des propositions, nous sommes ouverts à toute remarque ou suggestion pour parfaire notre programme, car avant tout, nous voulons que celui-ci soit représentatif de la plupart d'entre vous.<br />Pour donner ton avis rien de plus simple, loggue toi et écris ton message dans le paragraphe concerné !
+<div id="intro" class="lseft">La Yech'team soumet ses idï¿½es pour amï¿½liorer la vie du centralien. Toutes ces idï¿½es ne sont que des propositions, nous sommes ouverts ï¿½ toute remarque ou suggestion pour parfaire notre programme, car avant tout, nous voulons que celui-ci soit reprï¿½sentatif de la plupart d'entre vous.<br />Pour donner ton avis rien de plus simple, loggue toi et ï¿½cris ton message dans le paragraphe concernï¿½ !
 </div>
 <hr>
 <hr class="normal" />
@@ -108,59 +108,59 @@ class equipe extends module {
 
 
 <ul class="programme" id="tele">
-<p>Celui-là on est certains que tu le liras tout les soirs !</p>
+<p>Celui-lï¿½ on est certains que tu le liras tout les soirs !</p>
 <br />
 <iframe frameborder="0" bordercolor="#FFFFFF" scrolling="no" width="90%" height="1050" src="http://www.kamone.net/webmaster/ptv.php"></iframe>
 </ul>
 <ul class="programme" id="etudes">
-	<li>Veiller à ce que la réforme de l'enseignement se fasse avec les élèves.</li>
-	<li>Libérer un créneau hebdomadaire pour le travail en association.</li>
-	<li>Généralisation du serveur pédagogique à l'ensemble des matières.</li>
-	<li>Compléter la formation du centralien par l'organisation de conférences sur des sujets variés choisis par les élèves.</li>
+	<li>Veiller ï¿½ ce que la rï¿½forme de l'enseignement se fasse avec les ï¿½lï¿½ves.</li>
+	<li>Libï¿½rer un crï¿½neau hebdomadaire pour le travail en association.</li>
+	<li>Gï¿½nï¿½ralisation du serveur pï¿½dagogique ï¿½ l'ensemble des matiï¿½res.</li>
+	<li>Complï¿½ter la formation du centralien par l'organisation de confï¿½rences sur des sujets variï¿½s choisis par les ï¿½lï¿½ves.</li>
 	<li>Distribution des polys d'annales et de choix des NF directement dans les boites aux lettres.</li>  
-	<li>Aider ceux qui le souhaitent à trouver un stage à l'étranger.</li>
-	<li>Etablir des contacts avec des résidences universitaires étrangères pour pouvoir trouver plus facilement un logement à l'étranger durant le stage obligatoire.</li>
+	<li>Aider ceux qui le souhaitent ï¿½ trouver un stage ï¿½ l'ï¿½tranger.</li>
+	<li>Etablir des contacts avec des rï¿½sidences universitaires ï¿½trangï¿½res pour pouvoir trouver plus facilement un logement ï¿½ l'ï¿½tranger durant le stage obligatoire.</li>
 </ul>
 <ul class="programme" id="integration">
-	<li>S'assurer du maintient d'une commande groupée et diversifiée pour le matériel informatique par le Rezoléo et si besoin les aider à la réalisation de cette tâche.</li> 
-	<li>Faire plus de communication sur les commandes groupées en électroménagers, et maintenir celles-ci au moins jusqu'au mois de décembre.</li>
-	<li>Encourager les G1 et les IE3 à s'investir dans les différents clubs, commissions et associations. Pour cela nous voulons que chaque assoce puisse disposer de visibilité durant l'intégration.</li>
-	<li>Organisation d'un WEI pour tous, pour créer un véritable esprit d'école.</li>
+	<li>S'assurer du maintient d'une commande groupï¿½e et diversifiï¿½e pour le matï¿½riel informatique par le Rezolï¿½o et si besoin les aider ï¿½ la rï¿½alisation de cette tï¿½che.</li> 
+	<li>Faire plus de communication sur les commandes groupï¿½es en ï¿½lectromï¿½nagers, et maintenir celles-ci au moins jusqu'au mois de dï¿½cembre.</li>
+	<li>Encourager les G1 et les IE3 ï¿½ s'investir dans les diffï¿½rents clubs, commissions et associations. Pour cela nous voulons que chaque assoce puisse disposer de visibilitï¿½ durant l'intï¿½gration.</li>
+	<li>Organisation d'un WEI pour tous, pour crï¿½er un vï¿½ritable esprit d'ï¿½cole.</li>
 	<li>Soutenir et appliquer le projet TYCHE.</li>
 </ul>
 <ul class="programme" id="evenements">
-	<li>Nous souhaitons faire du foyer le coeur de la rez, pour cela, nous ferons tout pour qu'il n'y ait pas une semaine sans évènement au foyer.</li>
-	<li>Nous inciterons les centraliens à organiser des repas d'étage régulièrement tout au long de l'année.</li>
-	<li>Pour que les centraliens bougent un peu hors de Villeneuve d'Ascq, nous proposerons un planning des différentes soirées étudiantes présentes sur Lille et aux alentours.</li>
+	<li>Nous souhaitons faire du foyer le coeur de la rez, pour cela, nous ferons tout pour qu'il n'y ait pas une semaine sans ï¿½vï¿½nement au foyer.</li>
+	<li>Nous inciterons les centraliens ï¿½ organiser des repas d'ï¿½tage rï¿½guliï¿½rement tout au long de l'annï¿½e.</li>
+	<li>Pour que les centraliens bougent un peu hors de Villeneuve d'Ascq, nous proposerons un planning des diffï¿½rentes soirï¿½es ï¿½tudiantes prï¿½sentes sur Lille et aux alentours.</li>
 	<li>En ce qui concerne les voyages, nous voulons en organiser un tous les trimestres.</li>
 </ul>
 <ul class="programme" id="rez">
-<li>Aider ISF à sensibiliser les centraliens au réchauffement climatique et leur faire adopter un véritable comportement responsable vis-à-vis de la planète.<br />
-<li>Mettre sur notre site un plan détaillé des adresses à connaître comme dentiste, médecin, poste... et tout ce qui se trouve dans le labyrinthe de triolo. Nous pensions également filmer le trajet car une vue en 3D c'est toujours plus fiable qu'un plan en 2D !<br />
+<li>Aider ISF ï¿½ sensibiliser les centraliens au rï¿½chauffement climatique et leur faire adopter un vï¿½ritable comportement responsable vis-ï¿½-vis de la planï¿½te.<br />
+<li>Mettre sur notre site un plan dï¿½taillï¿½ des adresses ï¿½ connaï¿½tre comme dentiste, mï¿½decin, poste... et tout ce qui se trouve dans le labyrinthe de triolo. Nous pensions ï¿½galement filmer le trajet car une vue en 3D c'est toujours plus fiable qu'un plan en 2D !<br />
 <li>Assurer une permanence au DF tous les soirs.</li>
-<li>Réaliser un film de présentation de la résidence afin que les G1 connaissent les lieux dès leur arrivée.</li>
-<li>Contribution à la réalisation du film de présentation de l'école.</li>
-<li>Veillez à ce que la salle commune du batiment D le reste, quoi qu'il arrive.</li>
+<li>Rï¿½aliser un film de prï¿½sentation de la rï¿½sidence afin que les G1 connaissent les lieux dï¿½s leur arrivï¿½e.</li>
+<li>Contribution ï¿½ la rï¿½alisation du film de prï¿½sentation de l'ï¿½cole.</li>
+<li>Veillez ï¿½ ce que la salle commune du batiment D le reste, quoi qu'il arrive.</li>
 <li>Faire un recensement de toutes les salles et de leurs utilisateurs afin de ne pas les perdre inutilement.</li>
 </ul>
 <ul class="programme" id="communication">
-	<li>Inciter les élèves à utiliser IRC, qui est le moyen le plus rapide et le plus fiable pour communiquer à un grand nombre de personnes simultanément.</li>
-	<li>Continuer les réunions inter-prez des assoces.</li>
-	<li>Sensibiliser les centraliens à l'importance du centralSpam et faire en sorte que les G1 arrêtent de polluer inutilement les modérateurs par du Spam excessif.</li>
-	<li>Continuer le développement du portail des élèves, afin que celui-ci possède toujours plus de fonctionnalités.</li>
+	<li>Inciter les ï¿½lï¿½ves ï¿½ utiliser IRC, qui est le moyen le plus rapide et le plus fiable pour communiquer ï¿½ un grand nombre de personnes simultanï¿½ment.</li>
+	<li>Continuer les rï¿½unions inter-prez des assoces.</li>
+	<li>Sensibiliser les centraliens ï¿½ l'importance du centralSpam et faire en sorte que les G1 arrï¿½tent de polluer inutilement les modï¿½rateurs par du Spam excessif.</li>
+	<li>Continuer le dï¿½veloppement du portail des ï¿½lï¿½ves, afin que celui-ci possï¿½de toujours plus de fonctionnalitï¿½s.</li>
 </ul>
 <ul class="programme" id="solidarite">
 	<li>Inclure dans le cursus du centralien la formation pour l'AFPS, la rendre gratuite.</li>
-	<li>Continuer d'organiser des évènements lors du téléthon.</li>
+	<li>Continuer d'organiser des ï¿½vï¿½nements lors du tï¿½lï¿½thon.</li>
 </ul>
 <ul class="programme" id="autres">
-	<li>Nous voulons que les relations particulières entre les Ecoles Centrales se retrouvent aussi au niveau des élèves.C'est pourquoi nous aimerions maintenir une communication entre les différents BDE de celles-ci, afin que les élèves sachent ce qu'il se passe dans le groupe Centrale.</li>
-	<li>Nous  favoriserons l'organisation d'évènements inter-écoles entre associations, commissions ou clubs similaires.</li>
-	<li>Nous maintiendrons l'organisation des soirées en partenariat avec d'autres écoles de la métropole lilloise.</li>
+	<li>Nous voulons que les relations particuliï¿½res entre les Ecoles Centrales se retrouvent aussi au niveau des ï¿½lï¿½ves.C'est pourquoi nous aimerions maintenir une communication entre les diffï¿½rents BDE de celles-ci, afin que les ï¿½lï¿½ves sachent ce qu'il se passe dans le groupe Centrale.</li>
+	<li>Nous  favoriserons l'organisation d'ï¿½vï¿½nements inter-ï¿½coles entre associations, commissions ou clubs similaires.</li>
+	<li>Nous maintiendrons l'organisation des soirï¿½es en partenariat avec d'autres ï¿½coles de la mï¿½tropole lilloise.</li>
 </ul>
 <ul class="programme" id="ecole">
-	<li>Nous souhaitons compléter l'offre de journaux gratuits chaque matin en ajoutant, au 20 minutes, les échos.</li>
-	<li>Nous soutiendrons le projet du CRI de passer l'école en WIFI.</li>
+	<li>Nous souhaitons complï¿½ter l'offre de journaux gratuits chaque matin en ajoutant, au 20 minutes, les ï¿½chos.</li>
+	<li>Nous soutiendrons le projet du CRI de passer l'ï¿½cole en WIFI.</li>
 </ul>
 
 	<?php	
@@ -172,7 +172,7 @@ if (isset($_GET['par']) && !empty($_GET['par']) && $this->core->admin->estidenti
 
 	echo "<br />";
 	echo "<br />";
-	echo "<p>Tu veux réagir sur ce point ?</p>";
+	echo "<p>Tu veux rï¿½agir sur ce point ?</p>";
 	echo "<form method=\"POST\" action =\"?menu=equipe&module=equipe\">";
 	echo "<textarea cols=\"40\" rows=\"5\" name=\"message\"></textarea>";
 	echo "<input type=\"hidden\" name=\"par\" value=\"".$_GET['par']."\" />";	
@@ -181,8 +181,8 @@ if (isset($_GET['par']) && !empty($_GET['par']) && $this->core->admin->estidenti
 	echo "</form>";
 	echo "<hr />";
 	$query="SELECT * FROM commentaires join utilisateurs where utilisateurs.id=commentaires.id_user and paragraphe='".$_GET['par']."'";
-	$res=mysql_query($query);
-	while($buff=mysql_fetch_array($res))
+	$res=mysqli_query($query);
+	while($buff=mysqli_fetch_array($res))
 	{
 		$date_array=explode("-",$buff['date']);
 		$date=$date_array[2]."-".$date_array[1]."-".$date_array[0];
@@ -198,7 +198,7 @@ if (isset($_GET['par']) && !empty($_GET['par']) && $this->core->admin->estidenti
 		}
 		elseif(isset($_GET['action']) && $_GET['action']=='film')
 		{
-			echo "<p>Tu as aimé notre film ou tu ne l'as pas vu en amphi ? Ouvre les yeux !</p><br />";
+			echo "<p>Tu as aimï¿½ notre film ou tu ne l'as pas vu en amphi ? Ouvre les yeux !</p><br />";
 			echo "
 			
 			\n<div id=\"lecteur\">
@@ -209,19 +209,19 @@ if (isset($_GET['par']) && !empty($_GET['par']) && $this->core->admin->estidenti
 			\n</div>";
 		
 		echo "<br />";
-		echo "<a href=\"videos/film_de_campagne.avi\">Télécharger le film (pour les extérieurs)</a>";
+		echo "<a href=\"videos/film_de_campagne.avi\">Tï¿½lï¿½charger le film (pour les extï¿½rieurs)</a>";
 		echo "<br />";
-		echo "<a href=\"ftp://tuxp.vinci.ec-lille.fr/yechteam/film_de_campagne.avi\">Télécharger le film (ftp pour la rez)</a>";
+		echo "<a href=\"ftp://tuxp.vinci.ec-lille.fr/yechteam/film_de_campagne.avi\">Tï¿½lï¿½charger le film (ftp pour la rez)</a>";
 		echo "<br />";
 		echo "<br />";
-		echo "Un problème pour voir le film ? Voici un lecteur génial : <a href=\"videos/gomplayer.exe\">Télécharger</a>";
+		echo "Un problï¿½me pour voir le film ? Voici un lecteur gï¿½nial : <a href=\"videos/gomplayer.exe\">Tï¿½lï¿½charger</a>";
 		}
 		
 		
 		
 		elseif (isset($_GET['action']) && $_GET['action']=='presentation' || !isset($_GET['action'])) 
 		{
-		 echo "<h4>Présentation des membres</h4>";
+		 echo "<h4>Prï¿½sentation des membres</h4>";
 		 echo "<img  id=\"affiche_presentation\" src=\"images/affiche_presentation.jpg\" />";
 		}
 		
@@ -248,10 +248,10 @@ if (isset($_GET['par']) && !empty($_GET['par']) && $this->core->admin->estidenti
 			<td>Matin</td>
 			<td rowspan="2"></td>
 			<td rowspan="3"></td>
-			<td>Petit déj</td>
+			<td>Petit dï¿½j</td>
 		</tr>
 		<tr>
-			<td>Après-midi</td>
+			<td>Aprï¿½s-midi</td>
 			<td rowspan="2"></td>
 		</tr>
 		<tr>
@@ -281,15 +281,15 @@ if (isset($_GET['par']) && !empty($_GET['par']) && $this->core->admin->estidenti
 		<tr>
 			<td>Matin</td>
 			<td></td>
-			<td>Petit déj</td>
+			<td>Petit dï¿½j</td>
 			<td rowspan="3"></td>
 			<td></td>
-			<td>Petit déj</td>
+			<td>Petit dï¿½j</td>
 			<td rowspan="2"></td>
 			<td rowspan="3"></td>
 		</tr>
 		<tr>
-			<td>Après-midi</td>
+			<td>Aprï¿½s-midi</td>
 			<td>Gouter</td>
 			<td rowspan="2"></td>
 			<td>Lazer game</td>
@@ -299,7 +299,7 @@ if (isset($_GET['par']) && !empty($_GET['par']) && $this->core->admin->estidenti
 			<td>Soir</td>
 			<td></td>
 			<td></td>
-			<td>Soirée karaoké</td>
+			<td>Soirï¿½e karaokï¿½</td>
 		</tr>
 	</table>
 	
@@ -323,19 +323,19 @@ if (isset($_GET['par']) && !empty($_GET['par']) && $this->core->admin->estidenti
 		<tr>
 			<td>Matin</td>
 			<td rowspan="3"></td>
-			<td>Petit déj</td>
+			<td>Petit dï¿½j</td>
 			<td></td>
-			<td>Petit déj</td>
+			<td>Petit dï¿½j</td>
 			<td rowspan="2"></td>
 			<td rowspan="3"></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td>Après-midi</td>
+			<td>Aprï¿½s-midi</td>
 			<td rowspan="2"></td>
 			<td>Gouter</td>
 			<td rowspan="2"></td>
-			<td>Aprem délire + gouter</td>
+			<td>Aprem dï¿½lire + gouter</td>
 		</tr>
 		<tr>
 			<td>Soir</td>
@@ -374,13 +374,13 @@ if (isset($_GET['par']) && !empty($_GET['par']) && $this->core->admin->estidenti
 			<td rowspan="3"></td>
 		</tr>
 		<tr>
-			<td>Après-midi</td>
+			<td>Aprï¿½s-midi</td>
 			<td>Gouter</td>
 		</tr>
 		<tr>
 			<td>Soir</td>
 			<td>Torchot</td>
-			<td>Soirée orientale</td>
+			<td>Soirï¿½e orientale</td>
 			<td></td>
 		</tr>
 		</table>
@@ -403,11 +403,11 @@ if (isset($_GET['par']) && !empty($_GET['par']) && $this->core->admin->estidenti
 		<tr>
 			<td><strong></em>Matin</em></strong></td>
 			<td rowspan="3"></td>
-			<td rowspan="3">Débat des prez</td>
+			<td rowspan="3">Dï¿½bat des prez</td>
 			<td rowspan="3">2eme tour</td>
 		</tr>
 		<tr>
-			<td>Après-midi</td>
+			<td>Aprï¿½s-midi</td>
 		</tr>
 		<tr>
 			<td>Soir</td>

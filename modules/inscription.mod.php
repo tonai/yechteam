@@ -7,7 +7,7 @@ class inscription extends module {
 	var $core;
 	var $message;
 
-	function inscription(&$refmm,&$refcore)
+	function __construct(&$refmm,&$refcore)
 	{
 		$this->modulemanager=&$refmm;
 		$this->core=&$refcore;
@@ -26,7 +26,7 @@ class inscription extends module {
 			{
 				$this->message="Certains champs ne sont pas remplis !";
 			}	
-			elseif(isset($buff)) $this->message="Ce login existe déjà !";	
+			elseif(isset($buff)) $this->message="Ce login existe dï¿½jï¿½ !";	
 			elseif(!preg_match('#^[a-z A-Z 0-9 ._-]+@[a-z 0-9 ._-]{2,}\.[a-z]{2,4}$#',$_POST['mail'])) $this->message="Le mail n'est pas valide !";
 			elseif($_POST['ins_mdp']!=$_POST['confmdp']) $this->message="Les mots de passe ne correspondent pas !";
 			else 
@@ -52,7 +52,7 @@ class inscription extends module {
 		}
 		else
 		{
-			echo "<p>En t'inscrivant tu pourras participer à toutes nos activités mais aussi découvrir notre section bonus !
+			echo "<p>En t'inscrivant tu pourras participer ï¿½ toutes nos activitï¿½s mais aussi dï¿½couvrir notre section bonus !
 	</p><br />";
 			echo $this->message."<br /><br />";
 			if(isset($_POST['prenom'])) $prenom=$_POST['prenom'];
@@ -67,7 +67,7 @@ class inscription extends module {
 ?>
 
 	<form method="POST" action="?module=inscription&action=verif">
-		<label for="prenom">Prénom : </label>
+		<label for="prenom">Prï¿½nom : </label>
 			<input type="text" id="prenom" name="prenom" value="<?php echo $prenom;  ?>" /><br /><br />	
 		<label for="nom">Nom : </label>
 			<input type="text" id="nom" name="nom" value="<?php echo $nom;  ?>" /><br /><br />	

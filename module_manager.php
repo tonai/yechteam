@@ -12,7 +12,7 @@ class module_manager
 													"partenaires"=>"5"
 												);
 	
-	function module_manager(&$refcore,&$style)
+	function __construct(&$refcore,&$style)
 	{
                 $this->core=&$refcore;
 	}
@@ -29,7 +29,8 @@ class module_manager
 		echo "\n<style type=\"text/css\">";
 		if (isset($this->core->module) || $_GET['module']=='utile')
 		{
-			$buff=$this->core->db->selection('sous_menu','module',$this->core->module,'',0);
+			// $buff=$this->core->db->selection('sous_menu','module',$this->core->module,'',0);
+      $buff = [];
 			echo "\n#menu_gauche #smenu".$buff['ordre']." {display:block;}"; 
 			if ($_GET['module']=='utile') echo "\n#menu_gauche #smenu0{display:block;}"; 
 		}
@@ -50,7 +51,9 @@ class module_manager
 	{	
 		echo "\n<dl id=\"menu_gauche\">";
 		$i=1;
-		while ($buff=$this->core->db->selection('sous_menu','id_menu',$this->menu_tableau[$menu],'ordre'))		
+    // $buff=$this->core->db->selection('sous_menu','id_menu',$this->menu_tableau[$menu],'ordre');
+    $buff = false;
+		while ($buff)		
 		{
 			$this->charge($buff['module'],TRUE);
 			if(!$this->module_smenu->identification  || $this->module_smenu->identification && $this->core->admin->estidentifie())

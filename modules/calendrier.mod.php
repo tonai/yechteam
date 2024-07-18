@@ -7,10 +7,10 @@ class calendrier extends module {
 	var $modulemanager;
 	var $core;
 	var $message;
-	var $actions_module = array(	"Toutes nos activités"=>"activites",
+	var $actions_module = array(	"Toutes nos activitï¿½s"=>"activites",
 														"Nos affiches"=>"affiches"
 													);
-	function calendrier (&$refmm,&$refcore)
+	function __construct(&$refmm,&$refcore)
 	{
 		$this->modulemanager=&$refmm;
 		$this->core=&$refcore;
@@ -32,7 +32,7 @@ class calendrier extends module {
 		elseif (isset ($_GET['action']) && $_GET['action']=='activites' || !isset($_GET['action'])) $num_semaine=date('W');
 		if (isset($num_semaine))
 		{
-			echo "<p>Voici le calendrier des évènements organisés cette semaine. Prends bien note !</p><br />	";
+			echo "<p>Voici le calendrier des ï¿½vï¿½nements organisï¿½s cette semaine. Prends bien note !</p><br />	";
 		switch ($num_semaine)
 		{
 		case 11:
@@ -49,10 +49,10 @@ class calendrier extends module {
 			<td class="titre_ligne">Matin</td>
 			<td rowspan="2"></td>
 			<td rowspan="3"></td>
-			<td class="rempli"><a href="?menu=evenements&module=reservation&date_ev=0318">Petit déj</a></td>
+			<td class="rempli"><a href="?menu=evenements&module=reservation&date_ev=0318">Petit dï¿½j</a></td>
 		</tr>
 		<tr>
-			<td class="titre_ligne">Aprèm</td>
+			<td class="titre_ligne">Aprï¿½m</td>
 			<td rowspan="2"></td>
 		</tr>
 		<tr>
@@ -82,16 +82,16 @@ class calendrier extends module {
 		<tr>
 			<td class="titre_ligne">Matin</td>
 			<td></td>
-			<td class="rempli">Petit déj à <br />Centrale</td>
+			<td class="rempli">Petit dï¿½j ï¿½ <br />Centrale</td>
 			<td rowspan="3"></td>
 			<td></td>
-			<td class="rempli">Petit déj à <br />Centrale</td>
+			<td class="rempli">Petit dï¿½j ï¿½ <br />Centrale</td>
 			<td rowspan="2"></td>
 			<td rowspan="3"></td>
 		</tr>
 		<tr>
-			<td class="titre_ligne">Aprèm</td>
-			<td class="rempli">Gouter à <br />Centrale</td>
+			<td class="titre_ligne">Aprï¿½m</td>
+			<td class="rempli">Gouter ï¿½ <br />Centrale</td>
 			<td rowspan="2"></td>
 			<td class="rempli"><a href="?menu=evenements&module=reservation&date_ev=0322">Lasergame</a></td>
 			<td rowspan="2"></td>
@@ -100,7 +100,7 @@ class calendrier extends module {
 			<td class="titre_ligne">Soir</td>
 			<td></td>
 			<td></td>
-			<td class="rempli"><!--<a href="?menu=evenements&module=reservation&date_ev=0324">-->Torcho solidarité<br />Sidaction</td>
+			<td class="rempli"><!--<a href="?menu=evenements&module=reservation&date_ev=0324">-->Torcho solidaritï¿½<br />Sidaction</td>
 		</tr>
 	</table>
 	
@@ -123,15 +123,15 @@ class calendrier extends module {
 		<tr>
 			<td class="titre_ligne">Matin</td>
 			<td rowspan="3"></td>
-			<td class="rempli">Petit déj</td>
+			<td class="rempli">Petit dï¿½j</td>
 			<td></td>
-			<td class="rempli">Petit déj</td>
+			<td class="rempli">Petit dï¿½j</td>
 			<td rowspan="2"></td>
 			<td rowspan="3"></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td class="titre_ligne">Aprèm</td>
+			<td class="titre_ligne">Aprï¿½m</td>
 			<td rowspan="2"></td>
 			<td class="rempli">Gouter</td>
 			<td rowspan="2"></td>
@@ -174,13 +174,13 @@ class calendrier extends module {
 			<td rowspan="3"></td>
 		</tr>
 		<tr>
-			<td class="titre_ligne">Aprèm</td>
+			<td class="titre_ligne">Aprï¿½m</td>
 			<td class="rempli">Gouter</td>
 		</tr>
 		<tr>
 			<td class="titre_ligne">Soir</td>
 			<td class="rempli">Torchot</td>
-			<td class="rempli">Soirée orientale</td>
+			<td class="rempli">Soirï¿½e orientale</td>
 			<td></td>
 		</tr>
 		</table>
@@ -201,11 +201,11 @@ class calendrier extends module {
 		<tr>
 			<td class="titre_ligne">Matin</td>
 			<td rowspan="3"></td>
-			<td rowspan="3" class="rempli"><strong>Débat des prez</strong></td>
-			<td rowspan="3" class="rempli"><strong>2ème tour</strong></td>
+			<td rowspan="3" class="rempli"><strong>Dï¿½bat des prez</strong></td>
+			<td rowspan="3" class="rempli"><strong>2ï¿½me tour</strong></td>
 		</tr>
 		<tr>
-			<td class="titre_ligne">Aprèm</td>
+			<td class="titre_ligne">Aprï¿½m</td>
 		</tr>
 		<tr>
 			<td class="titre_ligne">Soir</td>
@@ -239,7 +239,7 @@ class calendrier extends module {
 
 	
 		}
-	elseif ($_GET['action']=='affiches') echo "<p>Ici tu retrouveras toutes nos affiches au fur et à  mesure que la campagne avance !</p>";	
+	elseif ($_GET['action']=='affiches') echo "<p>Ici tu retrouveras toutes nos affiches au fur et ï¿½ mesure que la campagne avance !</p>";	
 	}
 	function pied()
 	{

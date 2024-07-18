@@ -3,7 +3,7 @@
 class formulaire 
 {
 	var $core;
-	function formulaire(&$refcore)
+	function __construct(&$refcore)
 	{
 		$this->core=&$refcore;
 	}

@@ -4,7 +4,7 @@ class utile
 
 {
 	var $core;
-	function utile(& $refcore)
+	function __construct(& $refcore)
 	{
 		$this->core=&$refcore;
 	}
@@ -36,12 +36,12 @@ class utile
 	}
 }
 	/**
-	 *	Permet de gérer l'ordre dans la table $table d'une base de données
+	 *	Permet de gï¿½rer l'ordre dans la table $table d'une base de donnï¿½es
 	 *
-	 *	Pour gérer l'ordre d'affichage d'éléments d'une table, il est possible d'utiliser un champ ordre.
-	 *	Lors d'ajout, de modification ou de suppression d'éléments dans cette table, il faut renoméroter les éléments restants, c'est le but de cette fonction
-	 *	$nom est une variable contenant le nom de la clef primaire de la table et $evite est la valeur de l'id de l'élément modifié ou ajouté et qui ne doit pas être renuméroté.
-	 *	$testee est le nom d'un champ sur lequel le tri doit être fait et $valeur sa valeur.	
+	 *	Pour gï¿½rer l'ordre d'affichage d'ï¿½lï¿½ments d'une table, il est possible d'utiliser un champ ordre.
+	 *	Lors d'ajout, de modification ou de suppression d'ï¿½lï¿½ments dans cette table, il faut renomï¿½roter les ï¿½lï¿½ments restants, c'est le but de cette fonction
+	 *	$nom est une variable contenant le nom de la clef primaire de la table et $evite est la valeur de l'id de l'ï¿½lï¿½ment modifiï¿½ ou ajoutï¿½ et qui ne doit pas ï¿½tre renumï¿½rotï¿½.
+	 *	$testee est le nom d'un champ sur lequel le tri doit ï¿½tre fait et $valeur sa valeur.	
 	 *
 	 *	@author		Pierre Claudon <claudon.pierre@gmail.com>
 	 *	@param		$table		string

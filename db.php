@@ -8,22 +8,22 @@ class db
 	var $erreur;
 	var $res;
 
-	function db(&$refcore) 
+	function __construct(&$refcore) 
 	{
 		require_once "conf.php";
 		$this->core=&$refcore;
-		$this->ressource =@mysql_connect($host,$user,$pwd) or die("<br>Problème lors de la connexion à la base de données.");
+		$this->ressource =@mysqli_connect($host,$user,$pwd) or die("<br>Problï¿½me lors de la connexion ï¿½ la base de donnï¿½es.");
 		$this->dejafait=0;
-		@mysql_select_db($database,$this->ressource) or die("<br>Problème lors de la selection de la base de données");
+		@mysqli_select_db($this->ressource, $database) or die("<br>Problï¿½me lors de la selection de la base de donnï¿½es");
 	}
 
 	
 /**
-	 *	Effectue une requête $query, le paramètre $while permet de savoir si la requête est utilisée dans une boucle while (1) ou non (0)
+	 *	Effectue une requï¿½te $query, le paramï¿½tre $while permet de savoir si la requï¿½te est utilisï¿½e dans une boucle while (1) ou non (0)
 	 *
-	 *	Cette fonction intercepte les erreurs de requêtes.
+	 *	Cette fonction intercepte les erreurs de requï¿½tes.
 	 *	Si l'erreur survient lors de l'utilisation par un utilisateur quelconque, le message d'erreur lui dit de contacter un administrateur
-	 *	Si elle survient lors de l'utilisation par l'administrateur, la requête posant problème s'affiche.
+	 *	Si elle survient lors de l'utilisation par l'administrateur, la requï¿½te posant problï¿½me s'affiche.
 	 *
 	 *	@author		Pierre Claudon <claudon.pierre@gmail.com>
 	 *	@param		$query			string
@@ -35,8 +35,8 @@ class db
 	{
 		if ($this->dejafait==0)
 		{
-			$this->res=mysql_query($query,$this->ressource);
-			$this->dejafait=(mysql_affected_rows($this->ressource)+1);
+			$this->res=mysqli_query($this->ressource, $query);
+			$this->dejafait=(mysqli_affected_rows($this->ressource)+1);
 		}
 		if($this->dejafait==1)
 		{
@@ -44,7 +44,7 @@ class db
 			return;
 		}
 		$this->dejafait-=1;
-		$resultat=@mysql_fetch_array($this->res) or (($this->core->admin->estAdmin('intranet') and die( "<br>Problème avec la requête suivante : ".$query)) or (!$this->core->admin->estAdmin() and die( "<br>Une erreur est survenue, veuillez contacter un administrateur")));
+		$resultat=@mysqli_fetch_array($this->res) or (($this->core->admin->estAdmin('intranet') and die( "<br>Problï¿½me avec la requï¿½te suivante : ".$query)) or (!$this->core->admin->estAdmin() and die( "<br>Une erreur est survenue, veuillez contacter un administrateur")));
 		if($while=="0") $this->dejafait=0;
 		return $resultat;
 	}
@@ -96,8 +96,8 @@ class db
 			}
 			else $query.="(".$champ.") VALUES ('".$valeur."')";
 		}
-		$resultat=@mysql_query($query,$this->ressource) or ($this->core->admin->estAdmin('intranet') and die( "<br>Problème avec la requête suivante : ".$query)) or (!$this->core->admin->estAdmin() and die( "<br>Une erreur est survenue, veuillez contacter un administrateur"));
-		$id=mysql_insert_id($this->ressource);
+		$resultat=@mysqli_query($this->ressource, $query) or ($this->core->admin->estAdmin('intranet') and die( "<br>Problï¿½me avec la requï¿½te suivante : ".$query)) or (!$this->core->admin->estAdmin() and die( "<br>Une erreur est survenue, veuillez contacter un administrateur"));
+		$id=mysqli_insert_id($this->ressource);
 		return $id;
 	}
 		
@@ -130,7 +130,7 @@ class db
 			}
 			else $query.=$select."="."'".$select_valeur."'";
 		}
-		$resultat=@mysql_query($query,$this->ressource) or ($this->core->admin->estAdmin('intranet') and die( "<br>Problème avec la requête suivante : ".$query)) or (!$this->core->admin->estAdmin() and die( "<br>Une erreur est survenue, veuillez contacter un administrateur"));
+		$resultat=@mysqli_query($this->ressource, $query) or ($this->core->admin->estAdmin('intranet') and die( "<br>Problï¿½me avec la requï¿½te suivante : ".$query)) or (!$this->core->admin->estAdmin() and die( "<br>Une erreur est survenue, veuillez contacter un administrateur"));
 	}
 
 	function suppression ($table,$champ='',$valeur='')
@@ -150,7 +150,7 @@ class db
 			}
 			else $query.=$champ."="."'".$valeur."'";
 		}
-		$resultat=@mysql_query($query,$this->ressource) or ($this->core->admin->estAdmin('intranet') and die( "<br>Problème avec la requête suivante : ".$query)) or (!$this->core->admin->estAdmin() and die( "<br>Une erreur est survenue, veuillez contacter un administrateur"));
+		$resultat=@mysqli_query($this->ressource, $query) or ($this->core->admin->estAdmin('intranet') and die( "<br>Problï¿½me avec la requï¿½te suivante : ".$query)) or (!$this->core->admin->estAdmin() and die( "<br>Une erreur est survenue, veuillez contacter un administrateur"));
 	}
 }
 
