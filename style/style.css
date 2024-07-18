@@ -1,0 +1,32 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: #c7c7c7;
+	color: black;
+}
+
+#menu {
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 150px;
+}
+
+.barreMenu {
+	height: 30px;
+	background-image: url("../logo/barreMenu.png");
+}
+
+.contenuMenu {
+	height: 200px;
+	background-color: #ebebeb;
+	border-left: 2px solid #7a1e1e;
+	border-right: 2px solid #7a1e1e;
+	border-bottom: 2px solid #7a1e1e;
+}
+
+li {
+	margin-left: 20px;
+}

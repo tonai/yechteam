@@ -1,0 +1,341 @@
+* 	
+	{
+		font-family: verdana, arial;
+	}
+	
+body 
+	{	text-align:justify;
+		font-size:13px;
+		background-color:#6bd3f5;
+	}
+	
+ul,li 
+	{
+							margin: 0px;
+							padding: 0px;
+							list-style-type: none;
+	}
+	
+#global
+	{	
+		padding:0px;
+		width:900px;
+		margin:auto;
+		background-image:url('../images/fond.jpg');
+	}
+
+	
+#login
+	{
+		font-size:11px;
+		width:900px;
+		color:white;
+		height:77px;
+		background-image:url('../images/login.png');	
+	}
+
+	
+
+	#login form
+		{	
+			padding-right:15px;
+		}
+		
+	
+	
+	#login #login1
+		{
+			margin-top:10px;
+			float:right;
+		}
+	
+	#login ul
+		{
+			margin:10px;
+		}
+	
+		#login li
+			{
+				margin:5px;
+			}	
+	
+	#login a
+		{
+			text-decoration:none;
+			color:white;
+		}
+		
+#logo {float:left;}
+		
+#corps_global 
+	{
+		background:#6bd3f5;
+		filter:alpha (opacity=70);
+		-moz-opacity:0.7;
+		-khtml-opacity: 0.7;
+		-moz-border-radius:10px;
+		float:left;
+		margin-bottom:10px;
+		width:650px;
+		height:500px;
+	}
+
+#corps 
+	{
+		padding:10px;
+		width:630px;
+		height:480px;
+		background:transparent;
+		overflow:auto;
+	}
+	
+	object,embed
+		{
+			display:block;
+			margin:auto;
+		}
+	
+	.score
+		{	
+			margin:15px;
+			border-collapse:collapse;
+		}	
+	
+		.score th 
+			{
+				padding:3px;
+				text-align:center;
+				color:black;
+				font-weight:bold;
+				font-size:11px;
+			}
+	
+		.score td 
+			{
+				padding:3px;
+				text-align:center;
+				border:solid 1px black;
+				color:blue;
+				font-size:11px;
+			}
+	
+	.calendrier
+		{	
+			margin:auto;
+			border-collapse:collapse;
+		}	
+	
+		.calendrier td 
+			{
+				padding:3px;
+				text-align:center;
+				border:solid 1px black;
+				color:blue;
+				font-weight:bold;
+				font-size:11px;
+			}
+
+		.calendrier a 
+			{
+				text-decoration:none;
+			}
+
+		.calendrier th 
+			{
+				text-align:center;
+				font-size:11px;
+				padding:0px 3px 10px 3px;
+			}
+			
+		.calendrier .titre_ligne 
+			{
+				color:black;
+				padding-right:10px;
+				text-align:left;
+				font-weight:bold;
+				border:none;
+			}
+			
+		.calendrier .rempli 
+			{
+				background-color:white;
+			}
+	
+	.programme 
+		{
+			display:none;
+			margin-left:15px;
+			font-size:14px;
+			font-weight:bold
+		}
+	
+	#sommaire {font-weight:bold;font-size:15px;margin :0px 30px 0px 0px;}
+	
+	#corps label
+	{
+		font-weight:bold;
+		display:block;
+		float:left;
+		width:120px;
+	}
+
+#menu	
+	{	
+		margin-top:60px;
+		margin-left:25px;
+		float:left;
+		height:130px;
+		background-image:url('../images/menu_sans_preload2.png');		
+	}
+
+	#menu a
+	{
+		float:left;
+		display:block;
+		height:60px;
+	}			
+
+	#menu a:hover 
+	{
+		background-image:url('../images/menu_sans_preload2.png');
+	}
+
+	#menu #accueil 
+	{
+		width:122px;
+	}
+
+	#menu #accueil:hover 
+	{	
+		background-position:-700px 0px;
+	}
+
+	#menu #equipe 
+	{	width:156px;
+	}
+
+	#menu #equipe:hover 
+	{	
+		background-position:-822px -0px;
+	}
+
+	#menu #evenements 
+	{
+		width:148px;
+	}
+
+	#menu #evenements:hover 
+	{	
+		background-position:-978px 0px;
+	}
+	
+	#menu #bonus 
+	{
+		width:104px;
+	}
+
+	#menu #bonus:hover 
+	{	
+		background-position:-1126px 0px;
+	}
+
+	#menu #partenaires 
+	{
+		width:170px;
+	}
+
+	#menu #partenaires:hover 
+	{	
+		background-position:-1230px 0px;
+	}
+
+#menu_gauche
+	{
+		float:left;
+		width: 200px;
+		margin:0px 20px 0px 10px;
+	}
+	
+	#menu_gauche dt 
+	{
+		background-image: url('../images/sous_menu.png');
+		font-weight: bold;
+		line-height:25px;
+		margin-top:15px;
+		height: 25px;
+	}
+
+	#menu_gauche dt a
+	{
+		font-size:12px;
+		display:block;
+		padding-left:20px;
+	}
+	
+	#menu_gauche dd
+	{	
+		padding:5px;
+		-moz-opacity:0.7;
+		-khtml-opacity: 0.7;
+		background-color: #6bd3f5;
+		-moz-border-radius-bottomright:5px;
+		-moz-border-radius-bottomleft:5px;
+		text-decoration:none;
+		margin:0px;
+		display:none;
+	}
+	
+	#menu_gauche li
+	{
+		margin:5px;
+	}
+	
+	#titre_smenu0 
+	{
+		margin-top:0px;
+	}
+	
+	
+
+	
+
+	#menu_gauche a
+	{
+		color:blue;
+		text-decoration:none;
+	}
+
+
+
+.right {float:right;}
+.left {float:left;}
+
+
+
+
+div{	
+			margin-left:0px;
+			
+	}
+	
+
+a, a:focus, a:active {text-decoration:none;outline:none;}
+a:visited {text-decoration:none;color:blue;}
+img {border:none;}
+h4 {font-size:16px;}
+p {font-size:13px;font-weight:bold;}
+h5 {font-size:14px;}
+
+
+#lecteur {margin-left:50px;}
+
+#affiche_presentation {display:block;margin:auto;}
+
+hr 
+	{
+	line-height:0px;
+	clear:both;
+	visibility:hidden;
+	}
+
+.normal {clear:none;visibility:visible;}
